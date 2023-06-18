@@ -30,4 +30,30 @@ public class TextManipulator {
         return revertedText.toString();
     }
 
+    public Boolean findCharInParagraph(char letter, String paragraph) {
+
+        char[] paragraphToCharArray = paragraph.toCharArray();
+
+        for (char letters : paragraphToCharArray) {
+            if (letters == letter) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int countCharInParagraph(char letter, String paragraph) {
+
+        int occurrences = 0;
+        char[] paragraphToCharArray = paragraph.toCharArray();
+
+        for (char letters : paragraphToCharArray) {
+            if (letters == letter) {
+                occurrences++;
+            }
+        }
+
+        return occurrences;
+    }
+
 }

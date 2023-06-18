@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,5 +36,26 @@ class TextManipulatorTest {
         String revertedParagraph = "sdneirf ruo ot pu dnats ot hcum sa tsuj tub ,seimene ruo ot pu dnats ot yrevarb fo laed taerg a sekat tI";
         assertEquals(revertedParagraph, textManipulator.revertText(paragraph));
     }
+
+    @Test
+    void testFindCharInParagraph_returns_true() {
+        assertTrue(textManipulator.findCharInParagraph('a', paragraph));
+    }
+
+    @Test
+    void testFindCharInParagraph_returns_false() {
+        assertFalse(textManipulator.findCharInParagraph('z', paragraph));
+    }
+
+    @Test
+    void testCountCharInParagraph_returns_1() {
+        assertEquals(1, textManipulator.countCharInParagraph('k', paragraph));
+    }
+
+    @Test
+    void testCountCharInParagraph_returns_0() {
+        assertEquals(0, textManipulator.countCharInParagraph('z', paragraph));
+    }
+
 
 }
