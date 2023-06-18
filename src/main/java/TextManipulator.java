@@ -18,4 +18,16 @@ public class TextManipulator {
 
         return occurrences;
     }
+
+    public String revertText(String paragraph) {
+
+        char[] letters = paragraph.toCharArray();
+        StringBuilder revertedText = new StringBuilder();
+
+        for (int count = paragraph.length() - 1; count >= 0; count--)
+            revertedText.append(letters[count]);
+
+        return revertedText.toString();
+    }
+
 }

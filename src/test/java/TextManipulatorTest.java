@@ -7,34 +7,35 @@ class TextManipulatorTest {
 
     String validText = "stand";
     String invalidText = "RavenClaw";
-    String paragraph = "It takes a great deal of bravery to stand up to our enemies," +
+    String paragraph = "It takes a great deal of bravery to stand up to our enemies, " +
             "but just as much to stand up to our friends";
+
+    TextManipulator textManipulator = new TextManipulator();
 
     @Test
     void testFindTextInParagraph_returns_true() {
-
-        TextManipulator textManipulator = new TextManipulator();
         assertTrue(textManipulator.findTextInParagraph(validText, paragraph));
     }
 
     @Test
     void testFindTextInParagraph_returns_false() {
-
-        TextManipulator textManipulator = new TextManipulator();
         assertFalse(textManipulator.findTextInParagraph(invalidText, paragraph));
     }
 
     @Test
     void testCountTextInParagraph_returns_2() {
-
-        TextManipulator textManipulator = new TextManipulator();
         assertEquals(2, textManipulator.countTextInParagraph(validText, paragraph));
     }
 
     @Test
     void testCountTextInParagraph_returns_0() {
-
-        TextManipulator textManipulator = new TextManipulator();
         assertEquals(0, textManipulator.countTextInParagraph(invalidText, paragraph));
     }
+
+    @Test
+    void testRevertText_returns_reverted_string() {
+        String revertedParagraph = "sdneirf ruo ot pu dnats ot hcum sa tsuj tub ,seimene ruo ot pu dnats ot yrevarb fo laed taerg a sekat tI";
+        assertEquals(revertedParagraph, textManipulator.revertText(paragraph));
+    }
+
 }
