@@ -1,3 +1,4 @@
+import exceptions.PalindromeException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,5 +58,20 @@ class TextManipulatorTest {
         assertEquals(0, textManipulator.countCharInParagraph('z', paragraph));
     }
 
+    @Test
+    void testPalindrome_returns_true() throws PalindromeException {
+        assertTrue(textManipulator.isPalindrome("Was it a car or a cat I saw"));
+    }
 
+    @Test
+    void testPalindrome_returns_false() throws PalindromeException {
+        assertFalse(textManipulator.isPalindrome("Was it a car or a dog I saw"));
+    }
+
+    @Test
+    void testPalindrome_returns_PalindromeFormatException() {
+        Exception exception = assertThrows(PalindromeException.class, () -> textManipulator.isPalindrome("a"));
+        assertEquals("Palindrome should have three elements at least!", exception.getMessage());
+
+    }
 }

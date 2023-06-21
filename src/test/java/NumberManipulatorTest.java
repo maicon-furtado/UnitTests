@@ -1,7 +1,6 @@
 import exceptions.ZeroOrNegativeValueException;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -45,7 +44,7 @@ class NumberManipulatorTest {
     }
 
     @Test
-    void testFibonacci_returns_valid_value_when_length_is_0_or_negative() throws ZeroOrNegativeValueException {
+    void testFibonacci_returns_valid_value_when_length_is_0_or_negative() {
 
         Exception exception = assertThrows(ZeroOrNegativeValueException.class, () -> numberManipulator.fibonacci(0));
         assertEquals("Zero or negative values are not accepted!", exception.getMessage());
@@ -70,7 +69,7 @@ class NumberManipulatorTest {
     }
 
     @Test
-    void testValidateNumberIsEvenOrOdd_returns_ZeroOrNegativeValueException() throws ZeroOrNegativeValueException {
+    void testValidateNumberIsEvenOrOdd_returns_ZeroOrNegativeValueException() {
 
         Exception exception = assertThrows(ZeroOrNegativeValueException.class,
                 () -> numberManipulator.validateNumberIsEvenOrOdd(0));
@@ -114,8 +113,7 @@ class NumberManipulatorTest {
     }
 
     @Test
-    void testValidateListHasOnlyOddNumbers_returns_ZeroOrNegativeValueException()
-            throws ZeroOrNegativeValueException {
+    void testValidateListHasOnlyOddNumbers_returns_ZeroOrNegativeValueException() {
 
         List<Integer> numbers = Arrays.asList(9, 1, -5, 65, 0, 13);
 

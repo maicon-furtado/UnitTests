@@ -1,3 +1,7 @@
+import exceptions.PalindromeException;
+
+import java.util.Locale;
+
 public class TextManipulator {
 
     public Boolean findTextInParagraph(String text, String paragraph) {
@@ -19,12 +23,12 @@ public class TextManipulator {
         return occurrences;
     }
 
-    public String revertText(String paragraph) {
+    public String revertText(String text) {
 
-        char[] letters = paragraph.toCharArray();
+        char[] letters = text.toCharArray();
         StringBuilder revertedText = new StringBuilder();
 
-        for (int count = paragraph.length() - 1; count >= 0; count--)
+        for (int count = text.length() - 1; count >= 0; count--)
             revertedText.append(letters[count]);
 
         return revertedText.toString();
@@ -54,6 +58,17 @@ public class TextManipulator {
         }
 
         return occurrences;
+    }
+
+    public boolean isPalindrome(String text) throws PalindromeException {
+
+        TextManipulator textManipulator = new TextManipulator();
+        if (text.length() < 3)
+            throw new PalindromeException();
+
+        return text.toLowerCase(Locale.ROOT).replaceAll("\\s", "").
+                equals(textManipulator.revertText(text).toLowerCase(Locale.ROOT).replaceAll("\\s", ""));
+
     }
 
 }
