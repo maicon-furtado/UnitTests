@@ -1,6 +1,7 @@
 import exceptions.ZeroOrNegativeValueException;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class NumberManipulator {
@@ -83,4 +84,10 @@ public class NumberManipulator {
         }
         return classification;
     }
+
+    public int[] sortNumbers(int[] numbers) {
+        Arrays.sort(numbers);
+        return numbers;
+    }
+
 }

@@ -123,5 +123,17 @@ class NumberManipulatorTest {
 
     }
 
+    @Test
+    void testSortNumbers_returns_sorted_sequence() {
+
+        NumberManipulator numberManipulator = new NumberManipulator();
+
+        int[] shuffledNumbers = {1, 34, 35634, 36, 7665, 875, 236, 573, 12113, 6904, -33, -4854, 0};
+
+        int[] sortedNumbers = {-4854, -33, 0, 1, 34, 36, 236, 573, 875, 6904, 7665, 12113, 35634};
+
+        assertArrayEquals(sortedNumbers, numberManipulator.sortNumbers(shuffledNumbers));
+    }
+
 
 }

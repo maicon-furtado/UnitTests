@@ -1,6 +1,9 @@
 import exceptions.PalindromeException;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TextManipulatorTest {
@@ -73,5 +76,19 @@ class TextManipulatorTest {
         Exception exception = assertThrows(PalindromeException.class, () -> textManipulator.isPalindrome("a"));
         assertEquals("Palindrome should have three elements at least!", exception.getMessage());
 
+    }
+
+    @Test
+    void testSortLetters_returns_sorted_sequence() {
+
+        TextManipulator textManipulator = new TextManipulator();
+
+        char[] shuffledAlphabet = {'s', 'z', 'c', 'u', 'e', 'y', 'g', 'h', 'p', 'o', 'k', 'l', 'm',
+                'n', 'j', 'i', 'q', 'r', 'a', 't', 'd', 'v', 'f', 'x', 'w', 'b'};
+
+        char[] sortedAlphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+        assertArrayEquals(sortedAlphabet, textManipulator.sortLetters(shuffledAlphabet));
     }
 }
