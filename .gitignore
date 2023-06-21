@@ -1,0 +1,8 @@
+.idea
+target
+*.swp
+*.iml
+*.jar
+.cache
+user-files
+*.tmp

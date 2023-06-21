@@ -1,4 +1,5 @@
-import exceptions.NegativeValueException;
+import exceptions.ZeroOrNegativeValueException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class NumberManipulator {
         return numbers;
     }
 
-    public List<Integer> fibonacci(int limit) throws NegativeValueException {
+    public List<Integer> fibonacci(int limit) throws ZeroOrNegativeValueException {
 
         List<Integer> fibonacci = new ArrayList<>();
         fibonacci.add(0);
@@ -27,8 +28,59 @@ public class NumberManipulator {
         } else if (limit == 1) {
             return fibonacci;
         } else {
-            throw new NegativeValueException();
+            throw new ZeroOrNegativeValueException();
         }
         return fibonacci;
+    }
+
+    public String validateNumberIsEvenOrOdd(int number) throws ZeroOrNegativeValueException {
+
+        String classification;
+
+        if (number <= 0)
+            throw new ZeroOrNegativeValueException();
+        else if (number % 2 == 0)
+            classification = "The number " + number + " is Even";
+        else
+            classification = "The number " + number + " is Odd";
+
+        return classification;
+    }
+
+    public boolean validateListHasOnlyEvenNumbers(List<Integer> ListOfNumbers)
+            throws ZeroOrNegativeValueException {
+
+        boolean classification = true;
+        NumberManipulator numberManipulator = new NumberManipulator();
+
+        for (int number : ListOfNumbers) {
+            if (number <= 0) {
+                throw new ZeroOrNegativeValueException();
+            } else if (numberManipulator.validateNumberIsEvenOrOdd(number).
+                    equals("The number " + number + "is Odd")) {
+                classification = false;
+                break;
+            }
+        }
+        return classification;
+    }
+
+
+    public boolean validateListHasOnlyOddNumbers(List<Integer> ListOfNumbers)
+            throws ZeroOrNegativeValueException {
+
+        boolean classification = true;
+        NumberManipulator numberManipulator = new NumberManipulator();
+
+        for (int number : ListOfNumbers) {
+            if (number <= 0) {
+                throw new ZeroOrNegativeValueException();
+            } else if (numberManipulator.validateNumberIsEvenOrOdd(number).
+                    equals("The number " + number + "is Even")) {
+                classification = false;
+                break;
+            }
+        }
+        return classification;
     }
 }
