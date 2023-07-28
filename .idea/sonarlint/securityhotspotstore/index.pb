@@ -1,11 +1,21 @@
 
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-X
-(src/test/java/NumberManipulatorTest.java,3\0\30595efee21d87cf0e91183903ee582c7ca60485
 R
 "src/main/java/TextManipulator.java,7\e\7ef586060f6fcd53eb85c4e629bab732c1d28bfd
-d
-4src/main/java/exceptions/NegativeValueException.java,0\4\04ea560d662b7edffdec821598c0c45b48ca0153
-T
-$src/main/java/NumberManipulator.java,9\f\9f7f1565894ce75c67bdcf67bcc705bf4b703151
+j
+:src/main/java/exceptions/ZeroOrNegativeValueException.java,c\8\c8d7453814b6843a123946cb983a27316c627d76
+a
+1src/main/java/exceptions/PalindromeException.java,6\2\6230f6bba0d73c38aab045e1654d6a193b231b5e
+b
+2src/main/java/exceptions/BinaryValueException.java,1\2\1230c3e39c90e7d8e9afddd2690f916a8f962cff
+c
+3src/main/java/exceptions/DecimalValueException.java,f\f\ff1c7f9139e300e6a5243e856137d7213860064b
+g
+7src/main/java/exceptions/HexadecimalValueException.java,c\3\c36545b13429c7b227b1fc456f9ac2062e83fc3c
+a
+1src/main/java/exceptions/OctalValueException.java,7\4\74e12f9d5944e4c732b70bbd7c5d3d49321cd195
+j
+:src/main/java/exceptions/BaseNumberConverterException.java,5\0\50f62c42aaad804f693a1dc730b5ba268fddec2f
+`
+0src/main/java/exceptions/BaseValueException.java,9\a\9a966ad90716f516e7dacf317fbb663150920823
